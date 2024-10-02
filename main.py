@@ -23,7 +23,6 @@ def post_cadastro(
     estoque: str = Form(...), 
     preco: str = Form(...),
     categoria: str = Form(...)):
-    #salvar_cadastro(nome, descricao, estoque, preco)
     return RedirectResponse("/", 303)
 
 
