@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% set titulo = "Cadastro de Produto" %}
+{% set css_cadastro = "active" %}
 {% block conteudo %}
 
 <body>
     <div class="container mt-5">
-        <h1>Cadastro de Produto</h1>
         <form action="/post_cadastro" method="post">
             <div class="mb-3 form-floating">
                 <input class="form-control" type="text" name="nome" id="nome" placeholder=" ">
@@ -34,7 +34,8 @@
                 <option value="Automotivo">Automotivo</option>
                 <option value="Esporte&Lazer">Esporte & Lazer</option>
             </select>
-    </div>
+    <hr>
+        </div>
     <div class="mb-3">
         <button class="btn btn-dark btn-lg" type="submit">Cadastrar</button>
     </div>

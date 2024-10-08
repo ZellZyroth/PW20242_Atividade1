@@ -4,6 +4,7 @@ from fastapi.templating import Jinja2Templates
 import uvicorn
 
 NOME_PASTA_STATIC="static/"
+
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
@@ -15,6 +16,7 @@ def get_root(request: Request):
 @app.get("/cadastro")
 def get_cadastro(request: Request):
     return templates.TemplateResponse("cadastro.html", {"request": request})
+
 @app.post("/post_cadastro")
 def post_cadastro(
     request: Request, 
@@ -27,4 +29,4 @@ def post_cadastro(
 
 
 if __name__ == "__main__":
- uvicorn.run("main:app", port=8000, reload=True)
+    uvicorn.run("main:app", port=8000, reload=True)

@@ -18,3 +18,7 @@ SQL_EXCLUIR = """
 DELETE FROM produto
 WHERE id = ?;
 """
+
+SQL_OBTER_TODOS = """
+SELECT * FROM produto
+"""
