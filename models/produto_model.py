@@ -3,9 +3,9 @@ from typing import Optional
 
 @dataclass
 class Produto:
-    id: Optional[str] = None
+    id: Optional[int] = None
     nome: Optional[str] = None
     descricao: Optional[str] = None
-    estoque: Optional[str] = None
-    preco: Optional[str] = None
+    estoque: Optional[int] = None
+    preco: Optional[float] = None
     categoria: Optional[str] = None

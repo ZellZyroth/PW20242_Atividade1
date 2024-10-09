@@ -1,18 +1,18 @@
 from typing import Optional
 from models.produto_model import Produto
 from sql import produto_sql
-from sql.produto_sql import SQL_CRIAR_TABELA, SQL_INSERIR, SQL_OBTER_TODOS
-from util import obter_conexao
+from sql.produto_sql import *
+from util import Obter_Conexao
 
 
-def criar_tabela():
-    with obter_conexao() as conexao:
+def Criar_Tabela():
+    with Obter_Conexao() as conexao:
         db = conexao.cursor()
         db.execute(SQL_CRIAR_TABELA)
 
 
-def inserir(produto: Produto) -> Optional[Produto]:
-    with obter_conexao() as conexao:
+def Inserir(produto: Produto) -> Optional[Produto]:
+    with Obter_Conexao() as conexao:
         db = conexao.cursor()
         db.execute(
             SQL_INSERIR,
@@ -20,10 +20,10 @@ def inserir(produto: Produto) -> Optional[Produto]:
                 produto.nome,
                 produto.descricao,
                 produto.estoque,
-                produto.preço,
+                produto.preco,
                 produto.categoria,
             ),
-        )
+)
     if db.rowcount > 0:
         produto.id = db.lastrowid
         return produto
@@ -31,6 +31,6 @@ def inserir(produto: Produto) -> Optional[Produto]:
         return None
 
 
-def obter_todos():
-    bd = obter_conexao.cursor()
+def Obter_Todos():
+    bd = Obter_Conexao.cursor()
     bd.execute(produto_sql.SQL_OBTER_TODOS)

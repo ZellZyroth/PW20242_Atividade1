@@ -1,5 +1,4 @@
 import sqlite3
 
-
-def obter_conexao():
+def Obter_Conexao():
     return sqlite3.connect("dados.db")
